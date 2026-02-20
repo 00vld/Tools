@@ -286,7 +286,7 @@ chmod +x ~/.tmux-vpn.sh
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Move downloaded VPN configs
 
