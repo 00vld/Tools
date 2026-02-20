@@ -32,6 +32,7 @@ bindkey '^[[Z' undo
 ##### COMPLETION #####
 
 autoload -Uz compinit
+fpath=(~/.zsh/completions $fpath)
 compinit -d ~/.cache/zcompdump
 
 zstyle ':completion:*:*:*:*:*' menu select
@@ -188,3 +189,7 @@ fi
 if [[ -n "$SSH_CONNECTION" ]]; then
   export TERM=xterm-256color
 fi
+
+## Alias
+export PATH="$HOME/vpn/bin:$PATH"
+alias hosts='cat /etc/hosts'

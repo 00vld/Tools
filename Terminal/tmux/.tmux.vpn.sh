@@ -1,3 +1,4 @@
+# ~/.tmux.vpn.sh
 #!/bin/sh
 
 IF="tun0"
