@@ -62,8 +62,8 @@ if [ "$EUID" -ne 0 ]; then
     exec sudo "$0" "$@"
 fi
 
-VPNDIR="/home/kali/vpn/profiles"
-LOGDIR="/home/kali/vpn/logs"
+VPNDIR="$HOME/vpn/profiles"
+LOGDIR="$HOME/vpn/logs"
 
 FILE="$1"
 
