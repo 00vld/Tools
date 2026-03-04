@@ -62,8 +62,10 @@ if [ "$EUID" -ne 0 ]; then
     exec sudo "$0" "$@"
 fi
 
-VPNDIR="$HOME/vpn/profiles"
-LOGDIR="$HOME/vpn/logs"
+USER_HOME=$(eval echo ~${SUDO_USER:-$USER})
+
+VPNDIR="$USER_HOME/vpn/profiles"
+LOGDIR="$USER_HOME/vpn/logs"
 
 FILE="$1"
 
