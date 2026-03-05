@@ -55,6 +55,7 @@ setopt hist_ignore_space
 setopt hist_verify
 
 alias history="history 0"
+alias ssh='TERM=xterm-256color ssh'
 
 ##### TIME FORMAT #####
 
